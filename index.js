@@ -8,6 +8,7 @@ import conectarDB from "./config/db.js"
 import usuarioRoutes from "./routes/usuarioRoutes.js"
 import proyectoRoutes from "./routes/proyectoRoutes.js"
 import tareaRoutes from "./routes/tareaRoutes.js"
+import { Server } from 'socket.io'
 
 const app = express()
 
@@ -49,7 +50,6 @@ const servidor = app.listen(PORT, () => {
 
 // SOCKET.IO
 
-import { Server } from 'socket.io'
 
 const io = new Server(servidor, {
     pingTimeout: 60000,
