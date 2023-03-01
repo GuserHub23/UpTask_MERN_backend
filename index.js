@@ -54,7 +54,9 @@ const servidor = app.listen(PORT, () => {
 const io = new Server(servidor, {
     pingTimeout: 60000,
     cors: {
-        origin: process.env.FRONTEND_URL
+        origin: process.env.FRONTEND_URL,
+        methods: ['GET', 'POST'],
+    allowedHeaders: ['Access-Control-Allow-Origin']
     }
 })
 
